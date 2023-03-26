@@ -5,7 +5,7 @@ module.exports = async function request (url, options, body) {
   try {
     const response = await fetch(url, {
       headers,
-      body: JSON.stringify(body),
+      body: body && JSON.stringify(body),
       method
     })
     const json = await response.json()
