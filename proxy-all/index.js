@@ -33,7 +33,7 @@ app.post('/chatgpt/*', (req, res) => {
   const {url, body} = req;
   const headers = headersMap(req.headers);
   const method = 'POST';
-  request(makeUrl(url), {headers, method, body}).then((response) => {
+  request(makeUrl(url), {headers, method, body: JSON.stringify(body)}).then((response) => {
     res.send(response)
   })
 })
