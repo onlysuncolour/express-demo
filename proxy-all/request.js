@@ -9,8 +9,7 @@ module.exports = async function request (url, options, body) {
       method
     })
     const json = await response.json()
-    console.log(response)
-    console.log(json)
+    console.log(url, headers, body, method)
     return json
   } catch (error) {
     return error
