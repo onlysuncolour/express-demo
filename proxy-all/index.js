@@ -20,7 +20,7 @@ const headersMap = (origin) => {
 
 app.get('/chatgpt/*', (req, res) => {
   const {url} = req;
-  const headers = (req.headers);
+  const headers = headersMap(req.headers);
   const method = 'GET';
   console.log({url})
   // res.send({hello: 1})
