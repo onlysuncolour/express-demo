@@ -1,6 +1,9 @@
 const express = require('express')
 const request = require('./request')
 const app = express()
+
+app.use(express.json({extended: true, limit: '1mb'}))
+
 const port = process.env.PORT
 
 const makeUrl = (url) => {
@@ -22,8 +25,6 @@ app.get('/chatgpt/*', (req, res) => {
   const {url} = req;
   const headers = headersMap(req.headers);
   const method = 'GET';
-  console.log({url})
-  // res.send({hello: 1})
   request(makeUrl(url), {headers, method}, ).then((response) => {
     res.send(response)
   })
@@ -32,8 +33,6 @@ app.post('/chatgpt/*', (req, res) => {
   const {url, body} = req;
   const headers = headersMap(req.headers);
   const method = 'POST';
-  console.log({url})
-  // res.send({hello: 1})
   request(makeUrl(url), {headers, method, body}).then((response) => {
     res.send(response)
   })
