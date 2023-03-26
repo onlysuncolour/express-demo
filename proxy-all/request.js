@@ -9,6 +9,8 @@ module.exports = async function request (url, options, body) {
       method
     })
     const json = await response.json()
+    console.log(response)
+    console.log(json)
     return json
   } catch (error) {
     return error
