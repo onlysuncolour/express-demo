@@ -9,7 +9,8 @@
     "pm2:proxy": "pm2 start ./proxy-all/index.js --name proxy-all",
     "pm2:stop": "pm2 stop proxy-all",
     "pm2:logs": "pm2 logs proxy-all",
-    "pm2:restart": "pm2 restart proxy-all"
+    "pm2:restart": "pm2 restart proxy-all",
+    "pm2:list": "pm2 list"
   },
   "author": "",
   "license": "ISC",
